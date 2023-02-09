@@ -1,5 +1,5 @@
 import "./ExpensesList.css";
-import "./ExpenseItem"
+import ExpenseItem from "./ExpenseItem"
 
 function ExpensesList(props) {
   if (props.items.length === 0)
