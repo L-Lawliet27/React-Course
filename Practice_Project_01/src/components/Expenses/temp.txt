@@ -1,6 +1,0 @@
-1) mempass + contraseña
-2) [En otra terminal] ve para el directorio donde esta todo en el terminal
-3) pndump -list
-4) Busca el número de proceso de mempass y pndump <numero> > fichero.txt
-5) certutil -hashfile fichero.txt sha256 > hash.txt
-6) strings64 -a fichero.txt | findstr /i contraseña
