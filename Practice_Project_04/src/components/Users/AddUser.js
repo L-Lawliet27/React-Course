@@ -2,7 +2,7 @@ import Card from "../UI/Card";
 import classes from "./AddUser.module.css";
 import Button from "../UI/Button";
 import ErrorModal from "../UI/ErrorModal";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 function AddUser(props) {
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -47,7 +47,7 @@ function AddUser(props) {
   }
 
   return (
-    <div>
+    <Fragment>
       {error && (
         <ErrorModal
           title={error.title}
@@ -74,7 +74,7 @@ function AddUser(props) {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </Fragment>
   );
 }
 
