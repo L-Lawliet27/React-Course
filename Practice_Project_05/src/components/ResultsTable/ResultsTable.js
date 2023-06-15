@@ -1,15 +1,27 @@
-import classes from "./ResultsTable.module.css"
+import classes from "./ResultsTable.module.css";
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 
-const HeadFields = ["Year", "Total Savings", "Interest (Year)", "Total Interest", "Invested Capital"];
-const BodyFields = ["YEAR NUMBER","TOTAL SAVINGS END OF YEAR","INTEREST GAINED IN YEAR","TOTAL INTEREST GAINED","TOTAL INVESTED CAPITAL"];
+const HeadFields = [
+  { field: "Year", id: 0 },
+  { field: "Total Savings", id: 1 },
+  { field: "Interest (Year)", id: 2 },
+  { field: "Total Interest", id: 3 },
+  { field: "Invested Capital", id: 4 },
+];
 
-function ResultsTable() {
+const formatter = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
+
+function ResultsTable(props) {
   return (
     <table className={classes.result}>
-      <TableHead headFields={HeadFields}/>
-      <TableBody bodyFields={BodyFields}/>
+      <TableHead headFields={HeadFields} />
+      <TableBody data={props.yData} initInvestment={props.initInvestment} formatter={formatter}/>
     </table>
   );
 }

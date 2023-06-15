@@ -2,8 +2,8 @@ function TableHead(props) {
   return (
     <thead>
       <tr>
-        {props.headFields.map((field) => (
-          <th>{field}</th>
+        {props.headFields.map((i) => (
+          <th key={i.id}>{i.field}</th>
         ))}
       </tr>
     </thead>
